@@ -1,13 +1,10 @@
-import BestFeaturesCheckbox from "./BestFeaturesCheckbox"
+
 import Checkboxes from "./Checkboxes";
-import ColourRadioButtons from "./ColourRadioButtons";
-import ConsistencyRadiobuttons from "./ConsistencyRadioButtons";
 import EmailInput from "./EmailInput";
-import LogoRadioButtons from "./LogoRadioButtons";
 import NameInput from "./NameInput";
+import RadioButtons from "./RadioButtons";
 import ReviewInput from "./ReviewInput";
-import TimeSpentCheckboxes from "./TimeSpentCheckboxes";
-import WorstFeaturesCheckbox from "./WorstFeaturesCheckbox";
+
 
 function Form({ formState, setFormState, answerLists, setAnswerList, initialForm }) {
 
@@ -29,7 +26,7 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
 
             <h3>What would you say that are the best features of your rubber duck?</h3>
 
-            {/* <BestFeaturesCheckbox formState={formState} setFormState={setFormState} /> */}
+
             <Checkboxes
                 formState={formState}
                 setFormState={setFormState}
@@ -46,7 +43,7 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
         <div className="form__group">
             <h3>What would you say that are the worst bits of your rubber duck?</h3>
 
-            {/* <WorstFeaturesCheckbox formState={formState} setFormState={setFormState} /> */}
+
             <Checkboxes
                 formState={formState}
                 setFormState={setFormState}
@@ -63,25 +60,41 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
         <div className="form__group radio">
             <h3>How do you rate your rubber duck consistency?</h3>
 
-            <ConsistencyRadiobuttons formState={formState} setFormState={setFormState} />
+
+            <RadioButtons
+                formState={formState}
+                setFormState={setFormState}
+                name='consistency'
+            />
         </div>
 
         <div className="form__group radio">
             <h3>How do you rate your rubber duck colour?</h3>
 
-            <ColourRadioButtons formState={formState} setFormState={setFormState} />
+
+            <RadioButtons
+                formState={formState}
+                setFormState={setFormState}
+                name='colour'
+            />
+
         </div>
 
         <div className="form__group radio">
             <h3>How do you rate your rubber duck logo?</h3>
 
-            <LogoRadioButtons formState={formState} setFormState={setFormState} />
+
+            <RadioButtons
+                formState={formState}
+                setFormState={setFormState}
+                name='logo'
+            />
         </div>
 
         <div className="form__group">
             <h3>How do you like to spend time with your rubber duck</h3>
 
-            {/* <TimeSpentCheckboxes formState={formState} setFormState={setFormState} /> */}
+
             <Checkboxes
                 formState={formState}
                 setFormState={setFormState}
