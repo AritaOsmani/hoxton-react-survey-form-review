@@ -1,4 +1,5 @@
 import BestFeaturesCheckbox from "./BestFeaturesCheckbox"
+import Checkboxes from "./Checkboxes";
 import ColourRadioButtons from "./ColourRadioButtons";
 import ConsistencyRadiobuttons from "./ConsistencyRadioButtons";
 import EmailInput from "./EmailInput";
@@ -28,13 +29,35 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
 
             <h3>What would you say that are the best features of your rubber duck?</h3>
 
-            <BestFeaturesCheckbox formState={formState} setFormState={setFormState} />
+            {/* <BestFeaturesCheckbox formState={formState} setFormState={setFormState} /> */}
+            <Checkboxes
+                formState={formState}
+                setFormState={setFormState}
+                name='bestFeatures'
+                options={[
+                    { content: ` It's yellow!`, value: 'colour' },
+                    { content: `It  squeaks!`, value: 'sound' },
+                    { content: `  It has a logo!`, value: 'logo' },
+                    { content: `Its big!`, value: 'size' }
+                ]}
+            />
         </div>
 
         <div className="form__group">
             <h3>What would you say that are the worst bits of your rubber duck?</h3>
 
-            <WorstFeaturesCheckbox formState={formState} setFormState={setFormState} />
+            {/* <WorstFeaturesCheckbox formState={formState} setFormState={setFormState} /> */}
+            <Checkboxes
+                formState={formState}
+                setFormState={setFormState}
+                name='worstFeatures'
+                options={[
+                    { content: ` It's yellow!`, value: 'colour' },
+                    { content: `It  squeaks!`, value: 'sound' },
+                    { content: `  It has a logo!`, value: 'logo' },
+                    { content: `Its big!`, value: 'size' }
+                ]}
+            />
         </div>
 
         <div className="form__group radio">
@@ -58,7 +81,18 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
         <div className="form__group">
             <h3>How do you like to spend time with your rubber duck</h3>
 
-            <TimeSpentCheckboxes formState={formState} setFormState={setFormState} />
+            {/* <TimeSpentCheckboxes formState={formState} setFormState={setFormState} /> */}
+            <Checkboxes
+                formState={formState}
+                setFormState={setFormState}
+                name='timeSpent'
+                options={[
+                    { content: ` Swimming`, value: 'swimming' },
+                    { content: `Bathing!`, value: 'bathing' },
+                    { content: `Chatting`, value: 'chatting' },
+                    { content: `I don't like to spend time with it`, value: 'noTime' }
+                ]}
+            />
         </div>
 
         <ReviewInput formState={formState} setFormState={setFormState} />

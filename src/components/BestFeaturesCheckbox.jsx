@@ -33,8 +33,7 @@ function BestFeaturesCheckbox({ formState, setFormState }) {
         <li>
             <label>
                 <Input type='checkbox' name='bestFeatures' value='sound' onChange={onChange}></Input>
-                It
-                squeaks!
+                It  squeaks!
             </label>
         </li>
         <li>
