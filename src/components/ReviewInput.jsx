@@ -1,6 +1,6 @@
 import TextArea from "./TextArea"
 
-function ReviewInput({ formState, setFormState }) {
+function ReviewInput({ formState, setFormState, question }) {
 
     function onChange(event) {
         const newState = { ...formState, review: event.target.value }
@@ -8,7 +8,7 @@ function ReviewInput({ formState, setFormState }) {
     }
 
     return <label
-    >What else have you got to say about your rubber duck?
+    >{question}
 
         <TextArea name='review' cols={30} rows={10} onChange={onChange}></TextArea>
     </label >

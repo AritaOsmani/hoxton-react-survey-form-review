@@ -1,6 +1,6 @@
 import Input from "./Input"
 
-function RadioButtons({ formState, setFormState, name, options }) {
+function RadioButtons({ formState, setFormState, name, options, question }) {
 
     function onChange(event) {
         // let newState = { ...formState, consistency: Number(event.target.value) }
@@ -9,16 +9,19 @@ function RadioButtons({ formState, setFormState, name, options }) {
         setFormState(newState)
     }
 
-    return <ul>
-        {options.map((option, index) => <li>
+    return <div className="form__group radio">
+        <h3>{question}</h3>
+        <ul>
+            {options.map((option, index) => <li>
 
-            <Input key={index} id={`${name}${option.value}`} type="radio" name={name} value={option.value} onChange={onChange}></Input>
+                <Input key={index} id={`${name}${option.value}`} type="radio" name={name} value={option.value} onChange={onChange}></Input>
 
-            <label
-                htmlFor={`${name}${option.value}`}
-            >{option.content}</label
-            >
-        </li>)}
-    </ul>
+                <label
+                    htmlFor={`${name}${option.value}`}
+                >{option.content}</label
+                >
+            </li>)}
+        </ul>
+    </div>
 }
 export default RadioButtons

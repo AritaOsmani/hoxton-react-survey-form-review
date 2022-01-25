@@ -1,6 +1,6 @@
 import Input from "./Input"
 
-function Checkboxes({ formState, setFormState, name, options }) {
+function Checkboxes({ formState, setFormState, name, options, question }) {
 
     const bestFeaturesNode = document.querySelectorAll(`input[name =${name}]`)
     let bestFeaturesInput = [...bestFeaturesNode]
@@ -26,12 +26,16 @@ function Checkboxes({ formState, setFormState, name, options }) {
 
         }
     }
-    return <ul>
-        {options.map((option, index) => <label>
-            <Input key={index} type='checkbox' name={name} value={option.value} onChange={onChange}></Input>
-            {option.content}
-        </label>)}
+    return <div className="form__group">
 
-    </ul>
+        <h3>{question}</h3>
+        <ul>
+            {options.map((option, index) => <label>
+                <Input key={index} type='checkbox' name={name} value={option.value} onChange={onChange}></Input>
+                {option.content}
+            </label>)}
+
+        </ul>
+    </div>
 }
 export default Checkboxes
