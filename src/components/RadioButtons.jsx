@@ -1,6 +1,6 @@
 import Input from "./Input"
 
-function RadioButtons({ formState, setFormState, name }) {
+function RadioButtons({ formState, setFormState, name, options }) {
 
     function onChange(event) {
         // let newState = { ...formState, consistency: Number(event.target.value) }
@@ -10,36 +10,15 @@ function RadioButtons({ formState, setFormState, name }) {
     }
 
     return <ul>
-        <li>
+        {options.map((option, index) => <li>
 
-            <Input id={`${name}1`} type="radio" name={name} value="1" onChange={onChange}></Input>
+            <Input key={index} id={`${name}${option.value}`} type="radio" name={name} value={option.value} onChange={onChange}></Input>
 
             <label
-                htmlFor={`${name}1`}
-            >1</label
+                htmlFor={`${name}${option.value}`}
+            >{option.content}</label
             >
-        </li>
-        <li>
-            <Input id={`${name}2`} type="radio" name={name} value="2" onChange={onChange}></Input>
-            <label
-                htmlFor={`${name}2`}
-            >2</label
-            >
-        </li>
-        <li>
-            <Input id={`${name}3`} type="radio" name={name} value="3" onChange={onChange}></Input>
-            <label
-                htmlFor={`${name}3`}
-            >3</label
-            >
-        </li>
-        <li>
-            <Input id={`${name}4`} type="radio" name={name} value="4" onChange={onChange}></Input>
-            <label
-                htmlFor={`${name}4`}
-            >4</label
-            >
-        </li>
+        </li>)}
     </ul>
 }
 export default RadioButtons

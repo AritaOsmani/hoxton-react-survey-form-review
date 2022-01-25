@@ -65,6 +65,12 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
                 formState={formState}
                 setFormState={setFormState}
                 name='consistency'
+                options={[
+                    { content: '1', value: 1 },
+                    { content: '2', value: 2 },
+                    { content: '3', value: 3 },
+                    { content: '4', value: 4 }
+                ]}
             />
         </div>
 
@@ -76,6 +82,12 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
                 formState={formState}
                 setFormState={setFormState}
                 name='colour'
+                options={[
+                    { content: '1', value: 1 },
+                    { content: '2', value: 2 },
+                    { content: '3', value: 3 },
+                    { content: '4', value: 4 }
+                ]}
             />
 
         </div>
@@ -88,6 +100,12 @@ function Form({ formState, setFormState, answerLists, setAnswerList, initialForm
                 formState={formState}
                 setFormState={setFormState}
                 name='logo'
+                options={[
+                    { content: '1', value: 1 },
+                    { content: '2', value: 2 },
+                    { content: '3', value: 3 },
+                    { content: '4', value: 4 }
+                ]}
             />
         </div>
 
